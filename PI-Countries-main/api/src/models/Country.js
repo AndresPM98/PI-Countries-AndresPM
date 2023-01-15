@@ -4,7 +4,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    'country', {
+    'Country', {
     id:{
       type: DataTypes.STRING(3),
       primaryKey: true,
@@ -29,17 +29,16 @@ module.exports = (sequelize) => {
     },
     subregion:{
       type: DataTypes.STRING,
-      allowNull: false,
     },
     area:{
       type: DataTypes.STRING,
-      allowNull: false,
     },
     Population:{
       type: DataTypes.STRING,
-      allowNull: false,
     }
-  });
+  },
+  { timestamps: false }
+  );
 };
 
 /* [ ] País con las siguientes propiedades:

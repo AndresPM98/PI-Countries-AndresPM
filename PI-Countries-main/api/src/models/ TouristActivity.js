@@ -4,7 +4,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    'activity', {
+    'Activity', {
     id:{
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -13,19 +13,19 @@ module.exports = (sequelize) => {
     },
     name:{
       type: DataTypes.STRING,
-      allowNull: false,
     },
     difficulty:{
       type: DataTypes.ENUM("1", "2", "3", "4", "5"),
     },
     duration:{
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.INTEGER,
     },
     season:{
-      type: DataTypes.ENUM("Verano", "Otoño", "Invierno", "Primavera"),
+      type: DataTypes.ENUM(['Summer', 'Winter', 'Autumn', 'Spring']),
     },
-  });
+  },
+  { timestamps: false }
+  );
 };
 /* [ ] Actividad Turística con las siguientes propiedades:
 ID
