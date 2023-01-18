@@ -2,8 +2,8 @@ const { Router } = require("express");
 const { getCountries, getCountryById, findCountry } = require("../controllers/CountryController");
 const router = Router();
 
-router.get("/", async (req, res) => {
-  const { name } = req.body;
+ router.get("/", async (req, res) => {
+  const { name } = req.query;
   let countries;
   try {
     if (name) countries = await findCountry(name);
@@ -12,9 +12,9 @@ router.get("/", async (req, res) => {
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-});
+}); 
 
-/* router.get("/", async (req, res) => {
+ /* router.get("/", async (req, res) => {
   const { name } = req.query;
   let totalCountries = await getCountries();
 
@@ -30,7 +30,7 @@ router.get("/", async (req, res) => {
   } else {
     res.status(200).send(totalCountries);
   }
-}); */
+});  */
 
 router.get("/:id", async (req, res) => {
   let { id } = req.params;
