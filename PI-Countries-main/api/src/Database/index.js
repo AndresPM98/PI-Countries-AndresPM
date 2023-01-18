@@ -16,7 +16,7 @@ const getInfo = async () => {
         name: country.name.common,
         flag: country.flags[0],
         continent: country.region,
-        capital: capital,
+        capital: capital[0],
         subregion: country.subregion,
         area: country.area,
         population: country.population,
