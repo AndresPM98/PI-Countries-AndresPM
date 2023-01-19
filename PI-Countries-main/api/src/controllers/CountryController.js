@@ -1,7 +1,7 @@
 const { Country } = require("../db.js");
-const {Op} = require ("sequelize")
-const {getInfo} = require ("../Database")
-const {includeObject} = require ("./IncludeController")
+const { Op } = require ("sequelize")
+const { getInfo } = require ("../Database")
+const { includeObject } = require ("./IncludeController")
 
 const getCountries = async () => {
   try {
@@ -13,7 +13,7 @@ const getCountries = async () => {
   }
 };
 
-const findCountry = async (name) => {
+ const findCountry = async (name) => {
   console.log("findCountry");
   const results = await Country.findAll({
     where: {
@@ -25,7 +25,7 @@ const findCountry = async (name) => {
       return "Country not found";
   }
   return results;
-};
+}; 
 
 const getCountryById = async (id) => {
   const country = await Country.findByPk(id, includeObject);

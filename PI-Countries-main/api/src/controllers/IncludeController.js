@@ -1,4 +1,5 @@
 const { Activity } = require("../db.js");
+
  const includeObject = {
     include: {
       model: Activity,
