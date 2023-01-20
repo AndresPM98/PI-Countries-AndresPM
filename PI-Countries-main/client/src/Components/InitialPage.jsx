@@ -5,7 +5,7 @@ const InitialPage = ()=>{
     return(
         <>
             <h1>InitialPage</h1>
-            <Link to="/"><button>HOME</button></Link>
+            <Link to="/home"><button>HOME</button></Link>
         </>
     )
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Cards from "./Crads";
+import Cards from "./Cards";
 
 const Home = ()=>{
     return(
