@@ -14,7 +14,7 @@ router.post('/', async(req, res) => {
   });
 
   const countries = await Country.findAll({
-    where: {id: countryId}
+    where: {id: countryId.toUpperCase()}
   })
   
   createActivity.addCountries(countries)
