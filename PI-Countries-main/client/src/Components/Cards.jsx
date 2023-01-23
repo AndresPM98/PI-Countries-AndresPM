@@ -23,8 +23,8 @@ class Cards extends React.Component{
             // haga dispatch de la actionCreator que trae los personajes
             // 
             <Container>
-                {
-                    [...this.props.myCountries,...this.props.countries].map(country=>{
+                  {
+                    [...this.props.countries,...this.props.countries].map(country=>{
                         return(
                             <Card
                                 name={country.name}
@@ -33,7 +33,7 @@ class Cards extends React.Component{
                             />
                         )
                     })
-                }
+                }  
             </Container>
         )
     }
@@ -42,7 +42,6 @@ class Cards extends React.Component{
 const mapStateToProps=(state)=>{
     return{
         countries:state.countries,
-        myContries:state.myContries
     }
 }
 

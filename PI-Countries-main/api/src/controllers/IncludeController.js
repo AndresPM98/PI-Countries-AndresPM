@@ -1,6 +1,6 @@
 const { Activity } = require("../db.js");
 
- const includeObject = {
+ const includeActivity = {
     include: {
       model: Activity,
       attributes: ["name", "difficulty", "duration", "season"],
@@ -11,5 +11,5 @@ const { Activity } = require("../db.js");
   };
 
   module.exports = {
-   includeObject,
+   includeActivity,
   };

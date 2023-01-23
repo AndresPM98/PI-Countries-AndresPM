@@ -27,7 +27,7 @@ const Form = (props)=>{
         props.createActivity({
             ...form,
             id: Date.now(),
-            image: "http://localhost:3001/countries"
+            image: "http://localhost:3001/countries" //corregir el handle del boton submit
         });
         alert("Ativity create");
     }

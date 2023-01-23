@@ -7,7 +7,7 @@ const Tarjeta = styled.div`
     border:1px solid black;
 `
 
-const Card = ({flag, name, continent})=>{
+const Card = ({name, continent, flag})=>{
 
 
     return(

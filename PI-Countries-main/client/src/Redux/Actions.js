@@ -3,10 +3,10 @@ export const CREATE_ACTIVITY = "CREATE_ACTIVITY";
 
 export const getCountries = () => {
   return function (dispatch) {
-    fetch("http://localhost:3001/countries")  //por ahora traemos de la api de countries
+    fetch('http://localhost:3001/countries')  
       .then((response) => response.json())
       .then((data) =>
-        dispatch({ type: GET_COUNTRIES, payload: data.results })
+        dispatch({ type: GET_COUNTRIES, payload: data })
       );
   };
 };

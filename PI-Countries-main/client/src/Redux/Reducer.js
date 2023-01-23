@@ -9,13 +9,13 @@ const rootReducer = (state = initialState, action) => {
       case GET_COUNTRIES:
         return {
           ...state,
-          characters: action.payload,
+          countries: action.payload,
         };
         
         case CREATE_ACTIVITY:
       return {
         ...state,
-        myCountries: [...state.myCountries, action.payload],
+        countries: [...state.countries, action.payload],
       };
 
         default:
