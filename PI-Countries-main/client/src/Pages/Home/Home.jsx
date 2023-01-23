@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Cards from "../Components/Cards";
+import Cards from "../../Components/Cards";
 
 
 const Home = ()=>{
@@ -9,12 +9,14 @@ const Home = ()=>{
         <>
             <h1>Home</h1>
             <Link to="/activity-form"><button>Form</button></Link>
-            <hr></hr>
-            <button>Search</button>
-            <input type="search" placeholder="Buscar pais por nombre"/>
+            <button>Name</button>
+                <input type="search" placeholder="Buscar por nombre"/>
             <button>Continent</button>
+                <input type="search" placeholder="Buscar por continente"/>
             <button>Activity</button>
+                <input type="search" placeholder="Buscar por actividad"/>
             <button>A-Z</button><button>Z-A</button>
+            <hr/>
             <Cards></Cards>
             
         </>

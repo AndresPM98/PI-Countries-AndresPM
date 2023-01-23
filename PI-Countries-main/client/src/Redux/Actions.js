@@ -1,5 +1,5 @@
 export const GET_COUNTRIES = "GET_COUNTRIES";
-export const GET_COUNTRY_BY_CONTINENT = "GET_COUNTRY_BY_CONTINENT"
+export const FILTER_BY_CONTINENT = "FILTER_BY_CONTINENT"
 export const CREATE_ACTIVITY = "CREATE_ACTIVITY";
 
 
@@ -13,6 +13,13 @@ export const getCountries = () => {
       );
   };
 };
+
+export const filterByContinent = (payload) => {
+  return {
+    type: FILTER_BY_CONTINENT,
+    payload,
+  };
+}
 
  
 export const createActivity = (activity) => {

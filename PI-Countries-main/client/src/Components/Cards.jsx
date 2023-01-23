@@ -24,7 +24,7 @@ class Cards extends React.Component{
             // 
             <Container>
                   {
-                    [...this.props.countries,...this.props.countries].map(country=>{
+                    [...this.props.countries].map(country=>{
                         return(
                             <Card
                                 flag= {country.flag}   

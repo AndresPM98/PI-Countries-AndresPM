@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
-import { createActivity } from "../Redux/Actions";
+import { createActivity } from "../../Redux/Actions";
 
 const Form = (props)=>{
 
@@ -26,8 +26,6 @@ const Form = (props)=>{
         event.preventDefault();
         props.createActivity({
             ...form,
-            id: Date.now(),
-            image: "http://localhost:3001/countries" //corregir el handle del boton submit
         });
         alert("Ativity create");
     }
