@@ -1,10 +1,10 @@
 import './App.css';
 import { Route } from "react-router-dom";
-import InitilaPage from "./Components/InitialPage";
-import Home from "./Components/Home"
-import Form from './Components/ActivityForm';
-import Country from './Components/Country';
-import PersonalInfo from './Components/PersonalInfo';
+import InitilaPage from "./Pages/InitialPage";
+import Home from "./Pages/Home"
+import Form from './Pages/ActivityForm';
+import Country from './Pages/Country';
+import PersonalInfo from './Pages/PersonalInfo';
 
 
 
