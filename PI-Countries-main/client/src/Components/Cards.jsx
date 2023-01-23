@@ -20,16 +20,16 @@ class Cards extends React.Component{
     render(){
         return(
             // cuando el componente se monta....
-            // haga dispatch de la actionCreator que trae los personajes
+            // haga dispatch de la actionCreator que trae los paises
             // 
             <Container>
                   {
                     [...this.props.countries,...this.props.countries].map(country=>{
                         return(
                             <Card
+                                flag= {country.flag}   
                                 name={country.name}
                                 continent = {country.continent}
-                                flag= {country.flag}
                             />
                         )
                     })

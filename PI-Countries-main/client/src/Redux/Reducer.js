@@ -2,6 +2,7 @@ import { GET_COUNTRIES, CREATE_ACTIVITY } from "./Actions";
 
 const initialState = {
     countries:[],
+    country:[],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -12,8 +13,8 @@ const rootReducer = (state = initialState, action) => {
           countries: action.payload,
         };
         
-        case CREATE_ACTIVITY:
-      return {
+      case CREATE_ACTIVITY:
+        return {
         ...state,
         countries: [...state.countries, action.payload],
       };

@@ -1,5 +1,8 @@
 export const GET_COUNTRIES = "GET_COUNTRIES";
+export const GET_COUNTRY_BY_CONTINENT = "GET_COUNTRY_BY_CONTINENT"
 export const CREATE_ACTIVITY = "CREATE_ACTIVITY";
+
+
 
 export const getCountries = () => {
   return function (dispatch) {
@@ -11,6 +14,7 @@ export const getCountries = () => {
   };
 };
 
+ 
 export const createActivity = (activity) => {
     return {
       type: CREATE_ACTIVITY,

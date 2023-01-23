@@ -2,17 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Cards from "../Components/Cards";
 
+
 const Home = ()=>{
+  
     return(
         <>
             <h1>Home</h1>
-            <hr></hr>
             <Link to="/activity-form"><button>Form</button></Link>
-            <input type="search" />
-            <Cards></Cards> 
+            <hr></hr>
+            <button>Search</button>
+            <input type="search" placeholder="Buscar pais por nombre"/>
+            <button>Continent</button>
+            <button>Activity</button>
+            <button>A-Z</button><button>Z-A</button>
+            <Cards></Cards>
             
         </>
-    )
+    ) 
 }
 
-export default Home;
+export default Home; 
