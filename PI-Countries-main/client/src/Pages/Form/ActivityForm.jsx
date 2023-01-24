@@ -1,10 +1,11 @@
 import { connect } from "react-redux";
 import React from "react";
 import { createActivity } from "../../Redux/Actions";
+import { useState } from "react";
 
 const Form = (props)=>{
 
-    const [form,setForm] = React.useState({
+    const [form,setForm] = useState({
         name:"",
         difficulty:"",
         duration:"",
@@ -32,11 +33,26 @@ const Form = (props)=>{
 
     return(
         <form onSubmit={handleSubmit}>
-            <input placeholder="Name..." name="name" value={form.name} onChange={handleChange} />
-            <input placeholder="Difficulty..." name="difficulty" value={form.difficulty} onChange={handleChange} />
-            <input placeholder="Duration..." name="duration" value={form.duration} onChange={handleChange} />
-            <input placeholder="Season..." name="season" value={form.season} onChange={handleChange} />
-            <input placeholder="CountryId..." name="countryId" value={form.countryId} onChange={handleChange} />
+            <div>
+                <label>Name</label>
+                <input placeholder="Name..." name="name" value={form.name} onChange={handleChange} />
+           </div>
+            <div>
+                <label>Difficulty</label>
+                <input placeholder="Difficulty..." name="difficulty" value={form.difficulty} onChange={handleChange} />
+           </div>
+            <div>
+                <label>Duration</label>
+                <input placeholder="Duration..." name="duration" value={form.duration} onChange={handleChange} />
+           </div>
+            <div>
+                <label>Season</label>
+                <input placeholder="Season..." name="season" value={form.season} onChange={handleChange} />
+           </div>
+            <div>
+                <label>CountryId</label>
+                <input placeholder="CountryId..." name="countryId" value={form.countryId} onChange={handleChange} />
+            </div>
             <button type="submit">SUBMIT</button>          
         </form>
     )
