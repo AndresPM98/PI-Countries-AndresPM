@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./InitialPage.css";
 
 const InitialPage = ()=>{
     return(
-        <>
-            <Link className="linkHome" to="/home"><button>HOME</button></Link>
-        </>
+        <div className="initial-page">
+            <h1 className="welcome">Welcome...</h1>
+            <Link className="linkHome" to="/home"><button className="buttonIP">HOME</button></Link>
+        </div>
     )
 }
 

@@ -1,0 +1,29 @@
+.cardName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+  }
+  
+  .cardFlag {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    box-shadow: 0px 0px 8px white;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .cardFlag:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 15px white;
+  }
+  
+  .cardContinent {
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
