@@ -1,8 +1,9 @@
-import { GET_COUNTRIES, GET_COUNTRY, FILTER_BY_CONTINENT, CREATE_ACTIVITY } from "./Actions";
+import { GET_COUNTRIES, GET_DETAIL, FILTER_BY_CONTINENT } from "./Actions";
 
 const initialState = {
+    allCountries:[],
     countries:[],
-    country:[],
+    detail:[],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -13,27 +14,27 @@ const rootReducer = (state = initialState, action) => {
           countries: action.payload,
         };
 
-      case GET_COUNTRY:
-          return {
-            ...state,
-            country: action.payload,
-          };
+      case GET_DETAIL:
+        return {
+          ...state,
+          detail: action.payload,
+        };
 
       case FILTER_BY_CONTINENT:
-        return {
-          
-        }
-        
-      case CREATE_ACTIVITY:
-        return {
-        ...state,
-        countries: [...state.countries, action.payload],
-      };
-
-        default:
-            return {
-              ...state,
+          return {
+          ...state,
+          countries:
+            action.payload === 'All'
+              ? state.allCountries
+              : state.allCountries.filter(
+                (country) => country.continents === action.payload
+              ),
             };
+        
+       default:
+        return {
+          ...state,
+          };
         }
       };
 

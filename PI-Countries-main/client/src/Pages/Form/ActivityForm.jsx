@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
-import { createActivity } from "../../Redux/Actions";
+//import { createActivity } from "../../Redux/Actions";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -65,7 +65,7 @@ const Form = (props)=>{
 
 const mapDispatchToProps = (dispatch)=>{
     return{
-        createActivity:(activity)=>{dispatch(createActivity(activity))}
+      
     }
 }
 

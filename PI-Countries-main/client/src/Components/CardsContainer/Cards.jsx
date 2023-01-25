@@ -14,7 +14,6 @@ const Container = styled.div`
 const Cards = () => {
     const dispatch = useDispatch();
     const countries = useSelector(state => state.countries);
-
     useEffect(() => {
         dispatch(getCountries());
     }, [dispatch]);
@@ -29,9 +28,11 @@ const Cards = () => {
             {[...countries].map(country => {
                 return (
                     <Card
+                        key={country.id}
                         flag={country.flag}
                         name={country.name}
                         continent={country.continent}
+                        id={country.id}
                     />
                 );
             })}

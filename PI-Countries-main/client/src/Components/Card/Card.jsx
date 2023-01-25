@@ -12,11 +12,11 @@ const Tarjeta = styled.div`
       width:100%; /* especificamos un ancho para la imagen */
     }
 `
-
 const Card = ({ name, continent, flag, id }) => {
+
   return (
     <Tarjeta>
-      <Link to={`/detail-country/${id}`}>
+      <Link to={`/detail/${id}`}>
         <h2>{name}</h2>
         <img src={flag} alt={name} />
         <p>{continent}</p>
