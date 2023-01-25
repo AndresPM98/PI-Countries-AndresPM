@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 import { createActivity } from "../../Redux/Actions";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Form = (props)=>{
 
@@ -32,6 +33,9 @@ const Form = (props)=>{
     }
 
     return(
+        <>
+        <Link to="/home"><button>HOME</button></Link>
+        <hr/>
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Name</label>
@@ -55,6 +59,7 @@ const Form = (props)=>{
             </div>
             <button type="submit">SUBMIT</button>          
         </form>
+        </>
     )
 }
 
