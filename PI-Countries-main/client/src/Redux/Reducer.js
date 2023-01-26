@@ -1,9 +1,9 @@
-import { GET_COUNTRIES,GET_COUNTRIES_BY_NAME, GET_DETAIL, FILTER_BY_CONTINENT } from "./Actions";
+import { GET_COUNTRIES,GET_COUNTRIES_BY_NAME, GET_DETAIL, FILTER_BY_CONTINENT, POST_ACTIVITIES, GET_ACTIVITIES, FILTER_BY_ACTIVITY } from "./Actions";
 
 const initialState = {
     allCountries:[],
     countries:[],
-    detail:[],
+    detail:{},
     activities:[], 
 };
 
@@ -13,6 +13,7 @@ const rootReducer = (state = initialState, action) => {
         return {
           ...state,
           countries: action.payload,
+          allCountries: action.payload,
         };
       case GET_COUNTRIES_BY_NAME:
         return{
@@ -25,14 +26,38 @@ const rootReducer = (state = initialState, action) => {
           detail: action.payload,
         };
 
-      case FILTER_BY_CONTINENT:
-        const allCountries = state.allCountries;
-        const filter = action.payload === 'Continents' ?
-         allCountries : allCountries.filter(e => e.continente === action.payload);
+        case FILTER_BY_CONTINENT:
+          const all = state.allCountries;
+          const filter = action.payload === 'Continents' ? all : all.filter(e => e.continent === action.payload);
           return{
-          ...state,
-          countries: filter
+              ...state,
+              countries: filter
+          }
+
+          case POST_ACTIVITIES:
+            return {
+              ...state
+            }
+             
+          case  GET_ACTIVITIES:    
+              return{
+                  ...state,
+                  activities: action.payload
               }
+  
+          case FILTER_BY_ACTIVITY: 
+              const todos = state.allCountries;
+              const hasActivity = todos.filter( e => e.Activities.length !== 0)
+              const nuevoArr = hasActivity.filter(e => {
+                  for(let i=0; i<e.Activities.length; i++){
+                      if(e.Activities[i].name == action.payload) return true
+                  }
+              })
+              return{
+                  ...state,
+                  countries: nuevoArr
+              }
+               
         
        default:
         return {
@@ -40,5 +65,6 @@ const rootReducer = (state = initialState, action) => {
           };
         }
       };
+      
 
 export default rootReducer;

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Search from "../Searchbar/Searchbar";
+import Filter from "../Filter/Filter";
+
 
 
 const Navbar = ()=>{
@@ -9,12 +11,7 @@ const Navbar = ()=>{
         <>
             <Link to="/activity-form"><button>Form</button></Link>
             <Search/>
-            <button>Continent</button>
-                <input type="search" placeholder="Buscar por continente"/>
-            <button>Activity</button>
-                <input type="search" placeholder="Buscar por actividad"/>
-            <button>A-Z</button><button>Z-A</button>
-            
+            <Filter/>            
         </>
     ) 
 }

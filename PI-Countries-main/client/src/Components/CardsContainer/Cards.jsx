@@ -28,6 +28,7 @@ const Cards = () => {
             {[...countries].map(country => {
                 return (
                     <Card
+                        key={country.id}
                         id={country.id}
                         flag={country.flag}
                         name={country.name}
@@ -39,4 +40,4 @@ const Cards = () => {
     );
 };
 
-export default Cards;
+export default Cards; 

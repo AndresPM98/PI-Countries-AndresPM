@@ -8,11 +8,9 @@ import "./Home.module.css"
 const Home = ()=>{
   
     return(
-        <div>
+        <div className="cards-container">
             <Navbar/>
-            
             <Cards/>
-            
         </div>
     ) 
 }

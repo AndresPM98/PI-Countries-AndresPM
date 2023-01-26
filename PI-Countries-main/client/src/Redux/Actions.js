@@ -1,9 +1,11 @@
 import axios from "axios";
 export const GET_COUNTRIES = "GET_COUNTRIES";
 export const GET_DETAIL = "GET_DETAIL";
-export const FILTER_BY_CONTINENT = "FILTER_BY_CONTINENT"
-export const GET_COUNTRIES_BY_NAME = "GET_COUNTRIES_BY_NAME"
-
+export const FILTER_BY_CONTINENT = "FILTER_BY_CONTINENT";
+export const GET_COUNTRIES_BY_NAME = "GET_COUNTRIES_BY_NAME";
+export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
+export const GET_ACTIVITIES = "GET_ACTIVITIES";
+export const POST_ACTIVITIES = 'POST_ACTIVITIES';
 
 
 export const getCountries = () => {
@@ -40,6 +42,32 @@ export const filterByContinent = (payload) => {
     type: FILTER_BY_CONTINENT,
     payload,
   };
+};
+
+export function postActivities(payload) {
+  return async function (dispatch) {
+    await axios.post("http://localhost:3001/activity", payload);
+    return dispatch({
+      type: POST_ACTIVITIES,
+    });
+  };
 }
+export function getActivities(){
+  return async function(dispatch){
+      const res = await axios.get('http://localhost:3001/activities');
+    dispatch({
+      type: GET_ACTIVITIES,
+      payload: res.data
+    });
+  }
+}
+
+export function filterByActivity(payload){
+  return{
+      type:FILTER_BY_ACTIVITY,
+      payload
+  }
+}
+
 
   
