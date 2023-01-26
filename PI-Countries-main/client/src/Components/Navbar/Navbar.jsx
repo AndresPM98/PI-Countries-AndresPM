@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-
+import Search from "../Searchbar/Searchbar";
 
 
 const Navbar = ()=>{
@@ -9,8 +8,7 @@ const Navbar = ()=>{
     return(
         <>
             <Link to="/activity-form"><button>Form</button></Link>
-            <button>Name</button>
-                <input type="search" placeholder="Buscar por nombre"/>
+            <Search/>
             <button>Continent</button>
                 <input type="search" placeholder="Buscar por continente"/>
             <button>Activity</button>

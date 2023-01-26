@@ -1,29 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { filterByContinent } from "../../Redux/Actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const FilterContinent = () => {
-  const [continent, setContinent] = useState("All");
+const Filters = ({handleSorts}) => {
   const dispatch = useDispatch();
+    const filterCountry = useSelector((state) => state.countries);
+    const actividades = useSelector(state => state.activities)
 
-  const handleChange = (event) => {
-    setContinent(event.target.value);
-    dispatch(filterByContinent(event.target.value));
-  };
+    function handleFilterCountry (e){
+        dispatch(filterByContinent(e.target.value)) 
+    }
+
+    function handleFilterActivities (e){
+        dispatch(filterByActivity(e.target.value))
+    }
 
   return (
-    <nav>
-      <button>Filter by Continent</button>
-      <select value={continent} onChange={handleChange}>
-        <option value="All">All</option>
-        <option value="Africa">Africa</option>
-        <option value="Americas">Americas</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
+    <div>
+      <select onChange={(e) => handleSort(e)} >
+        <option value='order'>Order</option>
+        <option value="asc">A-Z</option>
+        <option value="desc">Z-A</option>
       </select>
-    </nav>
+      <select onChange={handleFilterCountry}>
+        <option value='Continents'>Continets</option>
+        <option value='Americas'>Americas</option>
+        <option value='Asia'>Asia</option>
+        <option value='Europe'>Europe</option>
+        <option value='Africa'>Africa</option>
+        <option value='Oceania'>Oceania</option>
+        <option value='Antarctic'>Antarctic</option>
+      </select>
+      <select onChange={handleFilterActivities}>
+        <option>Activity</option>
+        {actividades != "No activities"  && actividades.map(e => {
+          return (<option value={e.name} key={e.name}>{e.name}</option>) 
+        })}
+      </select>
+    </div>
   );
 };
 
-export default FilterContinent;
+export default Filters;
