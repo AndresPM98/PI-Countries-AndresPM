@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCountries, filterByContinent } from "../../Redux/Actions";
+import { getCountries, filterByContinent, filterByActivity } from "../../Redux/Actions";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
 
@@ -7,6 +7,7 @@ const Filters = (/* {handleSorts} */) => {
   const dispatch = useDispatch();
   // Obtén el estado de los países filtrados
   const filterCountry = useSelector((state) => state.countries);
+  const actividades = useSelector(state => state.activities);
 
   // Utiliza useEffect para detectar cambios en el estado y actualizar el componente
   useEffect(() => {
@@ -16,7 +17,11 @@ const Filters = (/* {handleSorts} */) => {
   function handleFilterCountry(event) {
     // Llama al dispatch de la acción filterByContinent con el valor seleccionado
     dispatch(filterByContinent(event.target.value));
-  }
+  };
+
+  function handleFilterActivities (event){
+    dispatch(filterByActivity(event.target.value))
+  };
   
   return (
     <div>
@@ -29,8 +34,12 @@ const Filters = (/* {handleSorts} */) => {
         <option value="Oceania">Oceania</option>
         <option value="Antarctic">Antarctic</option>
       </select>
-      {/* Usa un condicional para verificar si el estado de los países filtrados está vacío */}
-      
+      <select onChange={handleFilterActivities}>
+        <option>Activity</option>
+          {actividades != "No activities"  && actividades.map(e => {
+            return (<option value={e.name} key={e.name}>{e.name}</option>) 
+            })}
+      </select>
     </div>
   );
 };
