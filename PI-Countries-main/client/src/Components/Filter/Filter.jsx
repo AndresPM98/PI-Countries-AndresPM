@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getCountries, filterByContinent, filterByActivity, orderByName } from "../../Redux/Actions";
+import { getCountries, filterByContinent, orderByName, getActivities, filterByActivity } from "../../Redux/Actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const Filters = () => {
@@ -14,21 +14,22 @@ function handleFilterActivities (event){
 dispatch(filterByActivity(event.target.value))
 };
 
+function handleOrderAZ(event){
+  dispatch(orderByName(event.target.value))
+}
 
 useEffect(() => {
   dispatch(getCountries());
+  dispatch(getActivities())
 }, [dispatch]);
 
-function handleOrderAZ(e){
-  dispatch(orderByName(e.target.value))
-}
 
 return (
 
 <div>
-  <select onChange={(e) => handleOrderAZ(e)}>
-    <option value={'asc'}>A-Z</option>
-    <option value={'desc'}>Z-A</option>
+<select onChange={(event) => handleOrderAZ(event)}>
+                <option value={'asc'}>A-Z</option>
+                <option value={'desc'}>Z-A</option>
   </select>  
   <select onChange={handleFilterCountry}>
     <option value="Continents">Continents</option>

@@ -22,11 +22,11 @@ const { conn } = require('./src/db.js');
 const {getCountries} = require('./src/controllers/CountryController')
 
 /* // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ alter: true }).then(() => {
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
-}); */
+});  */
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(3001, async () => {
@@ -34,3 +34,4 @@ conn.sync({ force: true }).then(() => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
+ 

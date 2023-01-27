@@ -71,7 +71,7 @@ export default function ActivityCreate() {
 
     const handleActivities = (e) => {
       if (!form.countryId.includes(e.target.value)) {
-        setForm({ ...form, countryId: [...form.countryId, e.target.value] });
+       setForm({ ...form, countryId: [...form.countryId, e.target.value] });
         validate({ ...form, activities: [...form.activity, e.target.value] });
       } else {
         alert("El tipo ya fue seleccionado.");
@@ -88,7 +88,7 @@ const validate = (form)=>{
               errors.difficulty = 'You must choose the difficulty';
             } else if (!form.season) {
               errors.difficulty = 'You must choose the season';
-            } else if (!form.countryId.length == 0) {
+            } else if (!form.countryId.length === 0) {
               errors.countryId = 'You must select a country'
             }
             //return errors
@@ -119,10 +119,10 @@ const validate = (form)=>{
         })
       };
 
-    const handleSelect = (event) => {
+    const handleSelect = (e) => {
         setForm({ 
           ...form,
-          countryId: [...form.countryId, event.target.value]
+          countryId: [...form.countryId, e.target.value]
         })
       };
 
