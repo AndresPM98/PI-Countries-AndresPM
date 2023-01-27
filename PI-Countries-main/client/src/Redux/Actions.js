@@ -46,11 +46,12 @@ export const filterByContinent = (payload) => {
   };
 };
 
-export function postActivities(payload) {
-  return async function (dispatch) {
-    await axios.post("http://localhost:3001/activity", payload);
+export function postActivities(activity) {
+  return async (dispatch) => {
+    var response = await axios.post("http://localhost:3001/activity", activity);
     return dispatch({
       type: POST_ACTIVITIES,
+      payload: response.data,
     });
   };
 }
@@ -80,7 +81,7 @@ export function filterByActivity(payload){
     export function orderByName(payload){
       return{
           type:ORDER_BY_NAME,
-          payload
+          payload,
       }
   }
    

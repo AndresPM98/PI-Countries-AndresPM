@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, GET_DETAIL, FILTER_BY_CONTINENT, GET_ACTIVITIES, FILTER_BY_ACTIVITY/* , FILTER_BY_POPULATION*/, ORDER_BY_NAME  } from "./Actions";
+import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, GET_DETAIL, FILTER_BY_CONTINENT, GET_ACTIVITIES, FILTER_BY_ACTIVITY/* , FILTER_BY_POPULATION*/, ORDER_BY_NAME, POST_ACTIVITIES  } from "./Actions";
 
 const initialState = {
 allCountries:[],
@@ -33,6 +33,11 @@ case FILTER_BY_CONTINENT:
       ...state,
       countries: filter
   }
+  case POST_ACTIVITIES:
+    return {
+      ...state,
+      countries: [...state.countries, action.payload],
+    };
 
 case  GET_ACTIVITIES:    
   return{
@@ -52,30 +57,32 @@ case FILTER_BY_ACTIVITY:
       ...state,
       countries: nuevoArr
   }
-  case ORDER_BY_NAME:
-    let orderCountriesByName = action.payload === "ASC" ? state.countries.sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;    
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    }) :
-      state.countries.sort((a, b) => {
-        if (a.name < b.name) {
-          return 1;
-        }
-        if (a.name > b.name) {
-          return -1;
-        }
-        return 0;
-      })
-
-    return {
-      ...state,
-      countries: orderCountriesByName
-    }
+    case ORDER_BY_NAME:
+      let ordName = [...state.allCountries];
+      let countryByName =
+        action.payload === "asc"
+          ? ordName.sort((a, b) => {
+              if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                return 1;
+              } else if (a.name.toLowerCase() < b.name.toLowerCase()) {
+                return -1;
+              } else {
+                return 0;
+              }
+            })
+          : ordName.sort((a, b) => {
+              if (a.name.toLowerCase() < b.name.toLowerCase()) {
+                return 1;
+              } else if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                return -1;
+              } else {
+                return 0;
+              }
+            });
+      return {
+        ...state,
+        countries: countryByName,
+      };
 
 default:
 return {

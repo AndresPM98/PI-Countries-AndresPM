@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Filters = () => {
 const dispatch = useDispatch();
-const actividades = useSelector(state => state.activities);
+const activities = useSelector(state => state.activities);
 
 function handleFilterCountry(event) {
 dispatch(filterByContinent(event.target.value));
@@ -14,23 +14,22 @@ function handleFilterActivities (event){
 dispatch(filterByActivity(event.target.value))
 };
 
-function handleSort(event) {
-  event.preventDefault();
-  dispatch(orderByName(event.target.value));
-}
 
 useEffect(() => {
   dispatch(getCountries());
 }, [dispatch]);
 
+function handleOrderAZ(e){
+  dispatch(orderByName(e.target.value))
+}
+
 return (
 
 <div>
-  <select onChange={(event) => {handleSort(event);}}>
-        <option>Order</option>
-        <option value={"ASC"}>A - Z</option>
-        <option value={"DESC"}>Z - A</option>
-  </select>
+  <select onChange={(e) => handleOrderAZ(e)}>
+    <option value={'asc'}>A-Z</option>
+    <option value={'desc'}>Z-A</option>
+  </select>  
   <select onChange={handleFilterCountry}>
     <option value="Continents">Continents</option>
     <option value="Americas">Americas</option>
@@ -42,11 +41,13 @@ return (
   </select>
 <select onChange={handleFilterActivities}>
   <option>Activity</option>
-  {actividades !== "No activities" && actividades.map(e => {
+  {activities !== "No activities" && activities.map(e => {
   return (<option value={e.name} key={e.name}>{e.name}</option>)
   })}
  </select> 
 </div>
 );
 };
+
+
 export default Filters;

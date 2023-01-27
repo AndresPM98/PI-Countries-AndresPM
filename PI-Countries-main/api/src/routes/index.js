@@ -6,6 +6,6 @@ const activityRouter = require('./Activity.routes.js');
 
 // Configurar los routers
 router.use('/countries', countryRouter);
-router.use('/activity', activityRouter);
+router.use('/', activityRouter);
 
 module.exports = router;

@@ -24,6 +24,7 @@ const Country = (props)=>{
                 <div className="infoConteiner">
                 <img className="imgCountry" src={country.flag} alt={country.name}/> 
                 <h3 className="h3">Name: {country.name}</h3>
+                <h3 className="h3">Country ID: {country.id}</h3>
                 <h3 className="h3">Capital: {country.capital}</h3>
                 <h3 className="h3">Continent {country.continente}</h3>
                 <h3 className="h3">Subregion: {country.subregion}</h3>
