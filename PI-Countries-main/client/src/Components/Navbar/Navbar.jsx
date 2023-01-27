@@ -11,7 +11,7 @@ const Navbar = ()=>{
         <>
             <Link to="/activity-form"><button>Form</button></Link>
             <Search/>
-            <Filter/>            
+            <Filter/>    
         </>
     ) 
 }
