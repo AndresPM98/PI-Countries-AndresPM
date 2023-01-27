@@ -6,7 +6,7 @@ export const GET_COUNTRIES_BY_NAME = "GET_COUNTRIES_BY_NAME";
 export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
 export const POST_ACTIVITIES = 'POST_ACTIVITIES';
-export const FILTER_BY_POPULATION = 'FILTER_BY_POPULATION';
+export const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION';
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 
 
@@ -71,9 +71,9 @@ export function filterByActivity(payload){
       payload
   }
 }
-  export function filterByPopulation(payload){
+  export function orderByPopulation(payload){
     return{
-        type:FILTER_BY_POPULATION,
+        type:ORDER_BY_POPULATION,
         payload
     }
   }

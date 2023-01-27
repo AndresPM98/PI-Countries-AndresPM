@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, GET_DETAIL, FILTER_BY_CONTINENT, GET_ACTIVITIES, FILTER_BY_ACTIVITY/* , FILTER_BY_POPULATION*/, ORDER_BY_NAME, POST_ACTIVITIES  } from "./Actions";
+import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, GET_DETAIL, FILTER_BY_CONTINENT, GET_ACTIVITIES, FILTER_BY_ACTIVITY, ORDER_BY_POPULATION, ORDER_BY_NAME, POST_ACTIVITIES  } from "./Actions";
 
 const initialState = {
 allCountries:[],
@@ -27,11 +27,11 @@ detail: action.payload,
 };
 
 case FILTER_BY_CONTINENT:
-  const all = state.allCountries;
-  const filter = action.payload === 'Continents' ? all : all.filter(e => e.continent === action.payload);
+  const allCont = state.allCountries;
+  const filterCont = action.payload === 'Continents' ? allCont : allCont.filter(e => e.continent === action.payload);
   return{
       ...state,
-      countries: filter
+      countries: filterCont
   }
   case POST_ACTIVITIES:
     return {
@@ -39,7 +39,7 @@ case FILTER_BY_CONTINENT:
       countries: [...state.countries, action.payload],
     };
 
-case  GET_ACTIVITIES:    
+case  GET_ACTIVITIES:
   return{
       ...state,
       activities: action.payload
@@ -51,7 +51,8 @@ case FILTER_BY_ACTIVITY:
     const nuevoArr = hasActivity.filter(e => {
       for(let i=0; i<e.Activities.length; i++){
         if(e.Activities[i].name === action.payload) return true
-      } return false
+      } return false 
+      
     })
   return{
       ...state,
@@ -83,6 +84,34 @@ case FILTER_BY_ACTIVITY:
         ...state,
         countries: countryByName,
       };
+
+      case ORDER_BY_POPULATION:
+        let ordPop = [...state.allCountries];
+        let orderCountriesByPopulation =
+         action.payload === "HIGHER_POPULATION"
+          ? ordPop.sort((a, b) => {
+          if (a.population < b.population) {
+            return 1;
+          }else if (a.population > b.population) {
+            return -1
+          }else{
+          return 0;
+          }
+        }) : 
+        ordPop.sort((a, b) => {
+            if (a.population < b.population) {
+              return -1;
+            }else if (a.population > b.population) {
+              return 1;
+            }else{
+            return 0;
+            }
+          })
+        
+        return {
+          ...state,
+          countries: orderCountriesByPopulation
+        }
 
 default:
 return {
