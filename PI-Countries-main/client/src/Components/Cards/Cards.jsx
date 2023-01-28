@@ -1,27 +1,47 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { getCountries, filterByContinent, getActivities, filterByActivity, orderByName, orderByPopulation } from "../../Redux/Actions";
-import { useDispatch, useSelector } from "react-redux";
-import "./Filter.css"
+import { useDispatch, useSelector} from "react-redux";
+import { Link } from "react-router-dom";
+import Paginado from "../Paginated/Paginated"
+import Card from "../Card/Card";
+import "./Cards.css"
 
 const Filters = () => {
 const dispatch = useDispatch();
 const activities = useSelector(state => state.activities);
+const countries = useSelector((state) => state.countries);
 let activityNames = [];
+
+const [currentPage, setCurrentPage] = useState(1);
+  const [countriesPerPage] = useState(10);
+  const lastCountry = currentPage * countriesPerPage;
+  const firstCountry = lastCountry - countriesPerPage;
+  const currentCountry = countries.slice(firstCountry, lastCountry);
+  const [, setOrden] = useState('');
+
+  const paginado = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
 function handleFilterByContinent(event) {
 dispatch(filterByContinent(event.target.value));
+setCurrentPage(1);
 };
 
 function handleFilterActivities (event){
 dispatch(filterByActivity(event.target.value))
+setCurrentPage(1);
 };
 
 function handleOrderAZ(event){
   dispatch(orderByName(event.target.value))
+  setCurrentPage(1);
+  setOrden(`Ordenado ${event.target.value}`)
 }
 function handleOrderPop(event) {
   dispatch(orderByPopulation(event.target.value));
-  
+  setCurrentPage(1);
+  setOrden(`Ordenador ${event.target.value}`);
 }
 
 useEffect(() => {
@@ -34,6 +54,7 @@ return (
 
 <div className="FilterConteiner">
 <select onChange={(event) => handleOrderAZ(event)} className="OrderAZ">
+<option>Order</option>
                 <option value={'asc'} className="Options">A-Z</option>
                 <option value={'desc'} className="Options">Z-A</option>
   </select>  
@@ -60,9 +81,30 @@ return (
           }
         })}
       </select>
+      <div>
+      <Paginado
+        countriesPerPage={countriesPerPage}
+        countries={countries.length}
+        paginado={paginado}
+      /> 
+      </div>
+      <div className='Cards__Box'>
+        {currentCountry?.map((country) => {
+                return (
+                    <Card
+                        key={country.id}
+                        id={country.id}
+                        flag={country.flag}
+                        name={country.name}
+                        continent={country.continent}
+                    />
+                    );
+                  })}
+                </div> 
 </div>
 );
 };
 
 
-export default Filters;
+export default Filters; 
+

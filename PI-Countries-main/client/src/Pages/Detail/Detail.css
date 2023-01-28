@@ -1,4 +1,5 @@
-.detail {
+
+    .detail {
     background-image: url('../../Components/Imagenes/Fondo.jpeg');
     background-size: cover;
     height: 100vh;
@@ -6,6 +7,7 @@
     align-items: center;
     justify-content: center;
     }
+    
     
     .title {
         position: absolute;
@@ -53,7 +55,7 @@
         align-items: center; /* Alinea los elementos dentro de .infoConteiner en el eje vertical */
         justify-content: center; /* Alinea los elementos dentro de .infoConteiner en el eje horizontal */
         width: 35%; /* Asegura que el contenido ocupe todo el ancho de la página */
-        height: 90%; /* Asegura que el contenido ocupe toda la altura de la página */
+       /*  height: 90%; */ /* Asegura que el contenido ocupe toda la altura de la página */
         position:absolute;
         top: 200px;
         right: 10%;
@@ -61,7 +63,7 @@
     
     .imgCountry {
     width: 100%;
-    height: 55%;
+    height: 70%;
     position:absolute;
         top: 20px;
         right: 500px;
@@ -82,4 +84,3 @@
     letter-spacing: 2px;
     
     }
-    

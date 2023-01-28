@@ -1,0 +1,45 @@
+.FilterConteiner {
+    background-color: rgb(0, 153, 255);
+    color: white;
+    padding: 1rem;
+}
+    
+    .Cards__Box {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    }
+    
+    .OrderAZ, .OrderPop, .OrderCont, .OrderAct {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    }
+    
+    .OrderAZ:focus, .OrderPop:focus, .OrderCont:focus, .OrderAct:focus {
+    outline: none;
+    }
+    
+    .OrderAZ option, .OrderPop option, .OrderCont option, .OrderAct option {
+    background-color: rgba(0, 153, 255, 0.1); /* tono azul más claro */
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    }
+    
+    .OrderAZ option:hover, .OrderPop option:hover, .OrderCont option:hover, .OrderAct option:hover {
+    background-color: rgba(0, 153, 255, 0.2); /* tono azul aún más claro al pasar el cursor */
+    }
+    
+    .OrderAZ option:active, .OrderPop option:active, .OrderCont option:active, .OrderAct option:active {
+    background-color: rgb(0, 153, 255); /* tono azul oscuro al seleccionar */
+    }
+    
+    .OrderAZ option:checked, .OrderPop option:checked, .OrderCont option:checked, .OrderAct option:checked {
+    background-color: rgb(0, 153, 255);
+    color: white;
+    }
