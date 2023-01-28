@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { postActivities, getActivities } from "../../Redux/Actions";
+import { Link } from "react-router-dom";
 import "./Form.module.css"
 
 
@@ -210,25 +211,9 @@ const validate = (form)=>{
             <button  disabled={!disEna && "disabled"} type="submit">Create Activity</button>    
             {!disEna ? <p>Revise todos los campos</p> : <p></p>} 
           </div> 
-          {/*  <div>
-            <button disabled={!disEna && "disabled"} type={"submit"}>
-              <svg
-                class="css-i6dzq1"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-                fill="none"
-                stroke-width="2"
-                stroke="#942727"
-                height="24"
-                width="24"
-                viewBox="0 0 24 24"
-              >
-                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-              </svg>
-              Crear Activity
-            </button>
-            {!disEna ? <p>Revise todos los campos</p> : <p></p>}
-          </div> */}
+          <div>
+          <Link to="/home"><button className="buttonHomeForm">BACK HOME</button></Link>
+          </div> 
         </form>
     )
 }
