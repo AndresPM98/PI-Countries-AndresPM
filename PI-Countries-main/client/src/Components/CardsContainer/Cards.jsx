@@ -5,6 +5,7 @@ import { getCountries } from "../../Redux/Actions";
 import Card from "../Card/Card";
 
 const Container = styled.div`
+    background-color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

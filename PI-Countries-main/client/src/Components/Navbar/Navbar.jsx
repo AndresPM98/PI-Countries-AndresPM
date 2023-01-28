@@ -9,7 +9,7 @@ const Navbar = ()=>{
   
     return(
         <>
-            <Link to="/activity-form"><button>Form</button></Link>
+            <Link to="/activity-form"><button>Activity Create</button></Link>
             <Search/>
             <Filter/>    
         </>
