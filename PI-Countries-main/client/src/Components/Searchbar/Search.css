@@ -1,0 +1,33 @@
+.ButtonSearch {
+    position: absolute;
+    top: 20px;
+    right: 200px;
+    background-color: rgb(0, 153, 255); /* Color azul */
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px rgb(0, 153, 255);
+    transition: all 0.2s ease-in-out;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ButtonSearch:hover {
+    background-color: white;
+    color: rgb(0, 153, 255);
+    box-shadow: 0px 0px 15px rgb(0, 153, 255);
+  }
+.InputSearch {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    padding: 0.3rem 0.8rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px rgb(0, 153, 255);
+    font-size: 0.7rem;
+
+}

@@ -3,24 +3,29 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background-color: rgb(0, 153, 255);
+    background-color: rgba(0, 153, 255, 0.09);
     color: white;
   }
 
-  .Nav button {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    margin-right: 1rem;
-    cursor: pointer;
-  }
-  
-  .Nav button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .Nav button:active {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
+.ButtonActCrea {
+  position:absolute;
+  top: 20px;
+  left: 100px;
+  background-color: rgb(0, 153, 255); /* Color azul */
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 0px 8px rgb(0, 153, 255);
+  transition: all 0.2s ease-in-out;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ButtonActCrea:hover {
+  background-color: white;
+  color: rgb(0, 153, 255);
+  box-shadow: 0px 0px 15px rgb(0, 153, 255);
+}

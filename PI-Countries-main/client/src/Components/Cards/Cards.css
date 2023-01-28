@@ -1,5 +1,6 @@
 .FilterConteiner {
-    background-image: url("../Imagenes/52896.jpg");
+    /* background-image: url("../Imagenes/320285.jpg"); */
+    background-image: url("../Imagenes/52896.jpg"); 
     color: white;
     padding: 1rem;
 }
@@ -15,8 +16,10 @@
     
     .OrderAZ, .OrderPop, .OrderCont, .OrderAct {
     background-color: rgb(0, 153, 255);
+    margin: 15px;
     color: white;
     border: none;
+    border-radius: 50px;
     font-size: 1rem;
     padding: 0.5rem;
     width: 20%;

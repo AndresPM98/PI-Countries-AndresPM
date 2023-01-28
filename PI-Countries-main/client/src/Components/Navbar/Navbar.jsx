@@ -9,7 +9,7 @@ const Navbar = ()=>{
   
     return(
         <div className="Nav">
-            <Link to="/activity-form"><button>Activity Create</button></Link>
+            <Link to="/activity-form"><button className="ButtonActCrea">Activity Create</button></Link>
             <Search/>
         </div>
     ) 
