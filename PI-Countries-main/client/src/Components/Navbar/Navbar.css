@@ -1,3 +1,27 @@
-.Nav{
+.Nav {
     margin: 15px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgb(0, 153, 255);
+    color: white;
+  }
+  
+  .Nav button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  
+  .Nav button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .Nav button:active {
+    background-color: rgba(255, 255, 255, 0.3);
+  }

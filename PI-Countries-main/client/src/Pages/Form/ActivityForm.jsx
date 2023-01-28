@@ -6,23 +6,6 @@ import { Link } from "react-router-dom";
 import "./Form.module.css"
 
 
-/* 
-const validate = (form)=>{
-            let errors = {};
-            if (!form.name) {
-              errors.name = 'You must fill this field above';
-            } else if (!form.duration) {
-              errors.duration = 'You must fill this field';
-            } else if (!form.difficulty) {
-              errors.difficulty = 'You must choose the difficulty';
-            } else if (!form.season) {
-              errors.difficulty = 'You must choose the season';
-            } else if (!form.countryId.length === 0) {
-              errors.countryId = 'You must select a country'
-            }
-            return errors;
-          } */
-
 export default function ActivityCreate() {
 
   const history = useHistory();

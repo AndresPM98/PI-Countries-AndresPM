@@ -38,7 +38,7 @@ case POST_ACTIVITIES:
         activities: action.payload
       }
       
-      case FILTER_BY_CONTINENT:
+case FILTER_BY_CONTINENT:
         const allCont = state.allCountries;
         const filterCont = action.payload === 'Continents' ? allCont : allCont.filter(e => e.continent === action.payload);
         return{
@@ -59,6 +59,7 @@ case FILTER_BY_ACTIVITY:
       ...state,
       countries: nuevoArr
   }
+  
     case ORDER_BY_NAME:
       let ordName = [...state.allCountries];
       let countryByName =
@@ -122,76 +123,3 @@ return {
 };
 
 export default rootReducer;
-
-/* 
-HACER QUE LOS FILTROS FUNCIONEN EN CINJUNTO
-case 'FILTER_BY_GENRE':
-
-        let juegos = action.payload
-    if (state.games.length === 0) {
-        state.games = state.allGames
-    }
-    state.games = state.games.filter(videogames => videogames.genres?.includes(juegos))
-    if (action.payload === "all") state.games = state.allGames
-    if (state.games.length === 0) {
-        alert("No hay resultados")
-        state.games = state.allGames
-    }
-    return {
-        ...state,
-        games: state.games
-    }
-
-
-        case 'FILTER_BY_RATING':
-            let sorted2 = action.payload === 'desc' ?
-    state.games.sort((a, b) => {
-        if (a.rating > b.rating) {
-            return 1;
-        }
-        if (a.rating < b.rating) {
-            return -1;
-        }
-        return 0;
-    }) :
-    state.games.sort((a, b) => {
-        if (a.rating > b.rating) {
-            return -1;
-        }
-        if (a.rating < b.rating) {
-            return 1;
-        }
-        return 0;
-    });
-
-
-    return {
-        ...state,
-        games: sorted2
-    }
-            
-
-        case 'FILTER_BY_ABC':
-            let sorted = action.payload === 'asc' ?
-    state.games.sort(( a, b ) => {
-        if(a.name > b.name) {
-            return 1;
-        }
-        if(a.name < b.name) {
-            return -1;
-        }
-        return 0;
-    }) :
-    state.games.sort(( a, b ) => {
-        if(a.name > b.name) {
-            return -1;
-        }
-        if(a.name < b.name) {
-            return 1;
-        }
-        return 0;
-    })
-    return{
-        ...state,
-        games : sorted
-    } */
