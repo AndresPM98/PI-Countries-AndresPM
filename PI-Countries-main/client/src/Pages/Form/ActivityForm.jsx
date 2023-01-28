@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { postActivities, getActivities } from "../../Redux/Actions";
 import { Link } from "react-router-dom";
-import "./Form.module.css"
+import "./Form.css"
 
 
 export default function ActivityCreate() {
@@ -111,10 +111,10 @@ const validate = (form)=>{
       };
 
     return(
-        <form onSubmit={handleSubmit} id={"formulario"}>
-            <h3>Plan your activity</h3>
+        <form onSubmit={handleSubmit} id={"formulario"} className="Form">
+            <h3 className="Title">Plan your activity</h3>
 
-            <div>
+            <div className="Name">
                 <label>Name</label>
                 <input 
                 placeholder="Name..." 
@@ -126,7 +126,7 @@ const validate = (form)=>{
            {errors.name && <p className="error">{errors.name}</p>}
 
 
-           <div>
+           <div className="Difficulty">
            <label>Difficulty</label>
                 <div className="difficulty-group">
                     <input type="radio" name="difficulty"  key='difficulty' id="difficulty1" value="1" onChange={(e) => handleOnChange(e)}/>
@@ -143,7 +143,7 @@ const validate = (form)=>{
             </div>
             {errors.difficulty && <p className="error">{errors.difficulty}</p>}
 
-            <div>
+            <div className="Duration">
                 <label>Duration</label>
                 <input 
                 placeholder="Duration in hours..." 
@@ -154,7 +154,7 @@ const validate = (form)=>{
            </div>
            {errors.duration && <p className="error">{errors.duration}</p>}
 
-            <div>
+            <div className="Seasons">
             <label>Season</label>
             <select
               className="Form__Select"
@@ -173,7 +173,7 @@ const validate = (form)=>{
             
            </div>
             {errors.countryId && <p className="error">{errors.countryId}</p>}
-           <div>
+           <div className="Countries">
             <select onChange={(e) => handleSelect(e)} key='countryId'>
               <option className="op"> Countries </option>
                 {countries.map((v) => (
@@ -182,7 +182,7 @@ const validate = (form)=>{
             </select>
           </div>
 
-          <div>
+          <div className="ButtonX">
             {form.countryId.map((country) => (
               <div>
                 <input type='button' value='X' onClick={() => handleDelete(country)}/>
@@ -190,11 +190,11 @@ const validate = (form)=>{
               </div>
             ))} 
           </div> 
-          <div>
+          <div className="ButtonSub">
             <button  disabled={!disEna && "disabled"} type="submit">Create Activity</button>    
             {!disEna ? <p>Revise todos los campos</p> : <p></p>} 
           </div> 
-          <div>
+          <div className="ButtonHome">
           <Link to="/home"><button className="buttonHomeForm">BACK HOME</button></Link>
           </div> 
         </form>

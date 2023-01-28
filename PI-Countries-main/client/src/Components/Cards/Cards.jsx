@@ -81,13 +81,7 @@ return (
           }
         })}
       </select>
-      <div>
-      <Paginado
-        countriesPerPage={countriesPerPage}
-        countries={countries.length}
-        paginado={paginado}
-      /> 
-      </div>
+      
       <div className='Cards__Box'>
         {currentCountry?.map((country) => {
                 return (
@@ -101,6 +95,13 @@ return (
                     );
                   })}
                 </div> 
+       <div>
+      <Paginado
+        countriesPerPage={countriesPerPage}
+        countries={countries.length}
+        paginado={paginado}
+      /> 
+      </div>         
 </div>
 );
 };

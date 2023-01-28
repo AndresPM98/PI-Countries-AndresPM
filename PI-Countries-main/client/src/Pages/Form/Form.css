@@ -1,0 +1,116 @@
+.Form {
+    background-color: rgb(0, 153, 255);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 75%;
+    height: 85%;
+  }
+  
+  .Title {
+    margin-bottom: 20px;
+  }
+  
+  .Name, .Difficulty, .Duration, .Seasons, .Countries {
+    margin-bottom: 20px;
+  }
+  
+  .Name label, .Difficulty label, .Duration label, .Seasons label, .Countries label {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .Name input, .Duration input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+  }
+  
+  .difficulty-group {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .difficulty-group input[type="radio"] {
+    display: none;
+  }
+  
+  .difficulty-group label {
+    margin-right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .Seasons select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+  }
+  
+  .Countries select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+  }
+  
+  .ButtonX {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ButtonX div {
+    margin-right: 10px;
+  }
+  
+  .ButtonX input[type="button"] {
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ButtonSub {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .ButtonSub button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ButtonSub p {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  .ButtonHome {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .ButtonHome button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  
+  
