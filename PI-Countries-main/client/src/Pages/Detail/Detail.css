@@ -26,8 +26,8 @@
     
     .buttonHome {
     position: absolute;
-    top: 150px;
-    left: 200px;
+    top: 85px;
+    left: 400px;
     background-color: rgb(0, 153, 255); /* Color azul */
     color: white;
     padding: 0.5rem 1rem;
@@ -52,13 +52,19 @@
         display: list-item; /* Cambia a flex para poder utilizar align-items y justify-content */
         align-items: center; /* Alinea los elementos dentro de .infoConteiner en el eje vertical */
         justify-content: center; /* Alinea los elementos dentro de .infoConteiner en el eje horizontal */
-        width: 100%; /* Asegura que el contenido ocupe todo el ancho de la página */
+        width: 35%; /* Asegura que el contenido ocupe todo el ancho de la página */
         height: 90%; /* Asegura que el contenido ocupe toda la altura de la página */
+        position:absolute;
+        top: 200px;
+        right: 10%;
     }
     
     .imgCountry {
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    height: 55%;
+    position:absolute;
+        top: 20px;
+        right: 500px;
     }
     
     .h3 {

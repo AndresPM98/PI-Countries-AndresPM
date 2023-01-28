@@ -19,10 +19,11 @@ const Country = (props)=>{
         <div className="detail">
             <h1 className="title">Your Country</h1>
             <Link to="/home"><button className="buttonHome">BACK HOME</button></Link>
-            <hr/>
             { country !== null &&
                 <div className="infoConteiner">
-                <img className="imgCountry" src={country.flag} alt={country.name}/> 
+                    <div>
+                    <img className="imgCountry" src={country.flag} alt={country.name}/> 
+                    </div>
                 <h3 className="h3">Name: {country.name}</h3>
                 <h3 className="h3">Country ID: {country.id}</h3>
                 <h3 className="h3">Capital: {country.capital}</h3>
