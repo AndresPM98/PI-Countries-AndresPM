@@ -1,35 +1,59 @@
+.detail {
+background-image: url('../../Components/Imagenes/52896.jpg');
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+}
 
-    .detail {
-    background-image: url('../../Components/Imagenes/320285.jpg');
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
+.title {
+    background-color: rgba(255, 255, 255, 0.5); 
+    position: absolute;
+    top: 45px;
+    width: 50%;
+    color: black;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px rgb(0, 153, 255);
+    transition: all 0.2s ease-in-out;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     
-    
-    .title {
-        position: absolute;
-        top: 45px;
-        left: 40px;
-        color: white;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 50px;
-        box-shadow: 0px 0px 8px rgb(0, 153, 255);
-        transition: all 0.2s ease-in-out;
-        font-size: 2.2rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    
-    }
-    
-    .buttonHome {
+}
+.ButtonAct{
     position: absolute;
     top: 85px;
-    left: 400px;
+    right: 40px;
+    background-color: rgb(0, 153, 255); /* Color azul */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px rgb(0, 153, 255);
+    transition: all 0.2s ease-in-out;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.ButtonAct:hover {
+    background-color: white;
+    color: rgb(0, 153, 255);
+    box-shadow: 0px 0px 15px rgb(0, 153, 255);
+    transform: translateY(-5px);
+    }
+    
+.buttonHome {
+    position: absolute;
+    top: 85px;
+    left: 40px;
     background-color: rgb(0, 153, 255); /* Color azul */
     color: white;
     padding: 0.5rem 1rem;
@@ -43,44 +67,37 @@
     letter-spacing: 2px;
     }
     
-    .buttonHome:hover {
+.buttonHome:hover {
     background-color: white;
     color: rgb(0, 153, 255);
     box-shadow: 0px 0px 15px rgb(0, 153, 255);
     transform: translateY(-5px);
     }
     
-    .infoConteiner {
-        display: list-item; /* Cambia a flex para poder utilizar align-items y justify-content */
-        align-items: center; /* Alinea los elementos dentro de .infoConteiner en el eje vertical */
-        justify-content: center; /* Alinea los elementos dentro de .infoConteiner en el eje horizontal */
-        width: 35%; /* Asegura que el contenido ocupe todo el ancho de la página */
-       /*  height: 90%; */ /* Asegura que el contenido ocupe toda la altura de la página */
-        position:absolute;
-        top: 200px;
-        right: 10%;
+.imgCountry {
+        width: 40%;
+        height: 60%;
+        position: absolute;
+        top: 175px;
+        left: 50px;
     }
     
-    .imgCountry {
-    width: 100%;
-    height: 70%;
-    position:absolute;
-        top: 20px;
-        right: 500px;
-    }
-    
-    .h3 {
-    display:flexbox;
-    color: white;
+.CardInfo {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    top: 175px;
+    right: 50px;
+    color: black;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight:bold;
     text-transform: uppercase;;
     letter-spacing: 2px;
     border-radius: 50px;
-    box-shadow: 0px 0px 8px rgb(0, 153, 255);
+    box-shadow: 0px 0px 8px rgb(0, 153, 255); 
+    background-color: rgba(255, 255, 255, 0.5); 
     transition: all 0.2s ease-in-out;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
-    letter-spacing: 2px;
-    
+    letter-spacing: 2px; 
     }

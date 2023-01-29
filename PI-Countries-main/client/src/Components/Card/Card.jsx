@@ -7,9 +7,9 @@ const Card = ({ name, continent, flag, id }) => {
   return (
     <div className='Card'>
       <Link to={`/detail/${id}`} className="Link">
-        <h3>{name}</h3>
+        <h3 className='h3Card'>{name}</h3>
         <img src={flag} alt={name} className="Flag"/>
-        <p>{continent}</p>
+        <p className='pCont'>{continent}</p>
       </Link>
     </div>
   )

@@ -1,8 +1,9 @@
 .Paginado {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
     margin-top: 25px;
+    margin-left: 30px;
     }
     
     .Paginado__List {
@@ -17,7 +18,7 @@
     border: 1px solid #ccc;
     background-color: white;
     cursor: pointer;
-    margin-right: 8px;
+    margin-right: 5px;
     }
     
     .Paginado__Number:hover {

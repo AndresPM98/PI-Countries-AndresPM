@@ -1,7 +1,7 @@
 .ButtonSearch {
     position: absolute;
     top: 20px;
-    right: 240px;
+    right: 270px;
     background-color: rgb(0, 153, 255); /* Color azul */
     color: white;
     padding: 0.3rem 0.8rem;
@@ -24,7 +24,7 @@
     position: absolute;
     top: 20px;
     right: 50px;
-    padding: 0.3rem 0.8rem;
+    padding: 0.3rem 1.5rem;
     border: none;
     border-radius: 50px;
     box-shadow: 0px 0px 8px rgb(0, 153, 255);
