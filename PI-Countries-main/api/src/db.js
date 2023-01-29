@@ -34,11 +34,11 @@ const { Country, Activity } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-Country.belongsToMany(Activity, {
-  through: 'country_activity',
-  timestamps: false,
+Country.belongsToMany(Activity, { //Tabla intermedia con relacion de muchos a muchos
+  through: 'country_activity',    // entre las tablas de Country y Activity.
+  timestamps: false,              //  desactivar las columnas adicionales: createdAt y updatedAt
 })
-Activity.belongsToMany(Country, {
+Activity.belongsToMany(Country, {  
   through: 'country_activity',
   timestamps: false,
 })

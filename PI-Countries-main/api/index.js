@@ -28,10 +28,27 @@ conn.sync({ alter: true }).then(() => {
   });
 });  */
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+/* conn.sync({ force: true }).then(() => {
   server.listen(3001, async () => {
     await getCountries()
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
- 
+  */
+
+conn.sync({ force: true }).then(() => {
+  getCountries()
+    .then(() => {
+      server.listen(3001, () => {
+        console.log('Server listening at 3001');
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+});
+/* Se utiliza la promesa .then para ejecutar la función getCountries antes de que se escuche el puerto. Si getCountries falla, la promesa .catch capturará el error y lo registrará en la consola. Esto ayuda a asegurarse de que la aplicación no se bloquee en caso de un error y brinde una salida útil para resolver problemas.
+ */
+
+
+
