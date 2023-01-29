@@ -1,4 +1,5 @@
-const { DataTypes, UUIDV4 } = require('sequelize');
+const { DataTypes } = require('sequelize');
+const { UUID, UUIDV4 } = DataTypes;
 
 module.exports = (sequelize) => {
   // defino el modelo
@@ -29,7 +30,7 @@ module.exports = (sequelize) => {
     },
 
     season: {
-      type: DataTypes.ENUM({
+      type: DataTypes.STRING({
         values: ['summer', 'autumn', 'winter', 'spring'],   // Especificamos los valores del campo.
       })
     }, 
