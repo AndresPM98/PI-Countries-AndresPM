@@ -49,19 +49,22 @@ const Filters = () => {
   }, [dispatch]);
   
   return (
+  <div className="FondoCards">
   <div className="FilterConteiner">
+  <label className="LabOr">Order</label>
   <select onChange={(event) => handleOrderAZ(event)} className="OrderAZ">
-  <option>Order</option>
   <option value={'asc'} className="Options">A-Z</option>
   <option value={'desc'} className="Options">Z-A</option>
   </select>
+  <label className="LabPo">Population</label>
   <select onChange={(event) => handleOrderPop(event)} className="OrderPop">
-  <option>Population</option>
+  <option>All Countries</option>
   <option value={"HIGHER_POPULATION"} className="Options">HIGHER POPULATION</option>
   <option value={"LESS_POPULATION"} className="Options">LOWER POPULATION</option>
   </select>
+  <label className="LabCo">Continent</label>
   <select onChange={handleFilterByContinent} className="OrderCont">
-  <option value="Continents" className="Options">Continents</option>
+  <option value="Continents" className="Options">All Countries</option>
   <option value="Americas" className="Options">Americas</option>
   <option value="Asia" className="Options">Asia</option>
   <option value="Europe" className="Options">Europe</option>
@@ -69,8 +72,9 @@ const Filters = () => {
   <option value="Oceania" className="Options">Oceania</option>
   <option value="Antarctic" className="Options">Antarctic</option>
   </select>
+  <label className="LabAc">Activities</label>
   <select onChange={handleFilterActivities} className="OrderAct">
-  <option value="Activities" className="Options">Activities</option>
+  <option value="Activities" className="Options">All Countries</option>
           {activities !== "No activities" && activities.map(e => {
             if (!activityNames.includes(e.name)) {
               activityNames.push(e.name);
@@ -98,6 +102,7 @@ const Filters = () => {
           paginado={paginado}
         /> 
         </div>         
+  </div>
   </div>
 )};
   export default Filters;
