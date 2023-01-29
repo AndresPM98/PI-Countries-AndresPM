@@ -20,7 +20,7 @@ export default function ActivityCreate() {
 
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.countries);
-  const activities = useSelector((state) => state.activities);
+  //const activities = useSelector((state) => state.activities);
 
   const [errors, setErrors] = useState({});
 
@@ -53,14 +53,14 @@ export default function ActivityCreate() {
       history.push("/home");
     };
 
-    const handleActivities = (e) => {
+    /* const handleActivities = (e) => {
       if (!form.countryId.includes(e.target.value)) {
        setForm({ ...form, countryId: [...form.countryId, e.target.value] });
         validate({ ...form, activities: [...form.activity, e.target.value] });
       } else {
         alert("El tipo ya fue seleccionado.");
       }
-    };
+    }; */
     
 const validate = (form)=>{
             let errors = {};
@@ -111,6 +111,7 @@ const validate = (form)=>{
       };
 
     return(
+      <div className="FondoForm">
         <form onSubmit={handleSubmit} id={"formulario"} className="Form">
             <h3 className="Title">Plan your activity</h3>
 
@@ -173,12 +174,22 @@ const validate = (form)=>{
             
            </div>
             {errors.countryId && <p className="error">{errors.countryId}</p>}
-           <div className="Countries">
+           {/* <div className="Countries">
             <select onChange={(e) => handleSelect(e)} key='countryId'>
               <option className="op"> Countries </option>
                 {countries.map((v) => (
                   <option className="op" value={v.id}>{v.name}</option>
                 ))}
+            </select>
+          </div> */}
+          <div className="Countries">
+            <select onChange={(e) => handleSelect(e)} key='countryId'>
+              <option className="op"> Countries </option>
+                {countries
+                  .sort((a, b) => (a.name > b.name ? 1 : -1))
+                  .map((v) => (
+                    <option className="op" value={v.id}>{v.name}</option>
+                  ))}
             </select>
           </div>
 
@@ -198,5 +209,6 @@ const validate = (form)=>{
           <Link to="/home"><button className="buttonHomeForm">BACK HOME</button></Link>
           </div> 
         </form>
+        </div>
     )
 }

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCountries, filterByContinent, getActivities, filterByActivity, orderByName, orderByPopulation } from "../../Redux/Actions";
 import { useDispatch, useSelector} from "react-redux";
-import { Link } from "react-router-dom";
 import Paginado from "../Paginated/Paginated"
 import Card from "../Card/Card";
 import "./Cards.css"
