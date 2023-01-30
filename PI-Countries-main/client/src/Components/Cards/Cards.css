@@ -89,7 +89,8 @@
         }
         
         .Paginado__Number:hover {
-        background-color: #ccc;
+       /*  background-color: #ccc; */
+        background-color: rgba(104, 104, 104, 0.5);
         }
         
         .Paginado__Number.active {
