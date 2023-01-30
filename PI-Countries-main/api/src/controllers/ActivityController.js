@@ -9,7 +9,14 @@ const getActivities = async () => {
     }
   };
 
+  const deleteActivity = async (id) => {
+    const activitiToDelete = await Activity.findByPk(id);
+    await activitiToDelete.destroy();
+    return activitiToDelete;
+  };
+
   module.exports = {
     getActivities,
+    deleteActivity,
   };
   
