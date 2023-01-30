@@ -112,8 +112,8 @@ const validate = (form)=>{
 
     return(
       <div className="FondoForm">
+            <h3 className="TitleForm">Plan your activity</h3>
         <form onSubmit={handleSubmit} id={"formulario"} className="Form">
-            <h3 className="Title">Plan your activity</h3>
 
             <div className="Name">
                 <label>Name</label>
@@ -156,7 +156,6 @@ const validate = (form)=>{
            {errors.duration && <p className="error">{errors.duration}</p>}
 
             <div className="Seasons">
-            <label>Season</label>
             <select
               className="Form__Select"
               name={"season"}
@@ -206,9 +205,9 @@ const validate = (form)=>{
             {!disEna ? <p>Revise todos los campos</p> : <p></p>} 
           </div> 
           <div className="ButtonHome">
-          <Link to="/home"><button className="buttonHomeForm">BACK HOME</button></Link>
           </div> 
         </form>
+          <Link to="/home"><button className="ButtonHomeForm">BACK HOME</button></Link>
         </div>
     )
 }

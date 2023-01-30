@@ -7,6 +7,23 @@
   justify-content: center;
 }
 
+.TitleForm {
+    background-color: rgba(255, 255, 255, 0.5); 
+    position: absolute;
+    top: 20px;
+    width: 50%;
+    color: black;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px rgb(0, 153, 255);
+    transition: all 0.2s ease-in-out;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
 .Form { 
     background-color: rgba(255, 255, 255, 0.6); 
     display:flex;
@@ -15,21 +32,22 @@
     border:none;
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgb(0, 153, 255);
+    margin-top: 10%;
     width:50%; 
    
   }
   
-  .Title {
-    margin-bottom: 20px;
-    
-  }
+  
   
   .Name, .Difficulty, .Duration, .Seasons, .Countries {
+    margin: 10px;
     margin-bottom: 20px;
+    display:inline;
   }
   
   .Name label, .Difficulty label, .Duration label, .Seasons label, .Countries label {
     margin-bottom: 10px;
+   
     font-weight: bold;
   }
   
@@ -62,7 +80,7 @@
   
   .Seasons select {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     border: none;
     width: 100%;
   }
@@ -112,20 +130,29 @@
     margin-top: 10px;
     font-size: 12px;
   }
-  
-  .ButtonHome {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  .ButtonHome button {
+  .ButtonHomeForm{
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    background-color: rgb(0, 153, 255); /* Color azul */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px rgb(0, 153, 255);
+    transition: all 0.2s ease-in-out;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    }
+    
+.ButtonHomeForm:hover {
     background-color: white;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-  }
+    color: rgb(0, 153, 255);
+    box-shadow: 0px 0px 15px rgb(0, 153, 255);
+    transform: translateY(-5px);
+    }
   
   .error {
     color: red;
