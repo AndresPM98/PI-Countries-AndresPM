@@ -21,7 +21,7 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const {getCountries} = require('./src/controllers/CountryController')
 
-conn.sync({ alter: true }).then(() => {
+conn.sync({ /* alter: true */ force: false }).then(() => {
   getCountries()
     .then(() => {
       server.listen(3001, () => {
