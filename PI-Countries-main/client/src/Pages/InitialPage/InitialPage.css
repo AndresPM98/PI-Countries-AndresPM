@@ -1,6 +1,6 @@
 .initial-page {
-    
     background-image: url('../../Components/Imagenes/videoFondo.gif');
+    background-position: center;
     background-size: cover;
     height: 100vh;
     display: flex;
