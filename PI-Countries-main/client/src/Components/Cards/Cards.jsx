@@ -95,7 +95,7 @@ const Filters = () => {
     );
   })}
       </div> 
-         <div>
+         <div className="Paginado">
         <Paginado
           countriesPerPage={cardsPerPage}
           countries={countries.length}

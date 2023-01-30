@@ -1,10 +1,11 @@
 .FilterConteiner {
     /* background-image: url("../Imagenes/320285.jpg"); */
-    background-image: url("../Imagenes/52896.jpg"); 
-    /* background-size: cover; */
+     background-image: url("../Imagenes/52896.jpg");  
+     background-size: cover; 
     color: white;
     padding: 1rem;
-    height: 100vh;  
+    height: auto; 
+    min-height: 100vh; 
 }
     
     .Cards__Box {
@@ -58,3 +59,40 @@
     background-color: rgb(0, 153, 255);
     color: white;
     }
+
+    .Paginado {
+        display: flex;
+        align-items: center;
+        justify-content:center;
+         margin: 30px;
+         /* margin-top: 250px; */
+        /* height: 10vh; */
+        
+        }
+        
+        .Paginado__List {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+        
+        }
+        
+        .Paginado__Number {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: white;
+        cursor: pointer;
+        margin-right: 5px;
+        }
+        
+        .Paginado__Number:hover {
+        background-color: #ccc;
+        }
+        
+        .Paginado__Number.active {
+        background-color: #007bff;
+        color: white;
+        }
