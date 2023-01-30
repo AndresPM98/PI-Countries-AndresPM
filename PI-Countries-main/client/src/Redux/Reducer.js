@@ -57,12 +57,13 @@ case FILTER_BY_ACTIVITY:
     })
   return{
       ...state,
-      countries: nuevoArr
+      countries: action.payload==="Activities"? todos: nuevoArr
   }
   
     case ORDER_BY_NAME:
       let ordName = [...state.allCountries];
       let countryByName =
+        action.payload === "all"? ordName:
         action.payload === "asc"
           ? ordName.sort((a, b) => {
               if (a.name.toLowerCase() > b.name.toLowerCase()) {
@@ -90,6 +91,7 @@ case FILTER_BY_ACTIVITY:
       case ORDER_BY_POPULATION:
         let ordPop = [...state.allCountries];
         let orderCountriesByPopulation =
+        action.payload=== "all"? ordPop:
          action.payload === "HIGHER_POPULATION"
           ? ordPop.sort((a, b) => {
           if (a.population < b.population) {

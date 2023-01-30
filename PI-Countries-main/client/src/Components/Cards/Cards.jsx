@@ -53,12 +53,13 @@ const Filters = () => {
   <div className="FilterConteiner">
   <label className="LabOr">Order</label>
   <select onChange={(event) => handleOrderAZ(event)} className="OrderAZ">
+  <option value="all" className="Options">Predeterminado</option>
   <option value={'asc'} className="Options">A-Z</option>
   <option value={'desc'} className="Options">Z-A</option>
   </select>
   <label className="LabPo">Population</label>
   <select onChange={(event) => handleOrderPop(event)} className="OrderPop">
-  <option>All Countries</option>
+  <option value="all">All Countries</option>
   <option value={"HIGHER_POPULATION"} className="Options">HIGHER POPULATION</option>
   <option value={"LESS_POPULATION"} className="Options">LOWER POPULATION</option>
   </select>
