@@ -21,6 +21,7 @@
   
   .Title {
     margin-bottom: 20px;
+    
   }
   
   .Name, .Difficulty, .Duration, .Seasons, .Countries {
@@ -33,10 +34,14 @@
   }
   
   .Name input, .Duration input {
+    margin: 5px;
     padding: 10px;
     border-radius: 5px;
     border: none;
     width: 100%;
+    border:none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgb(0, 153, 255);
   }
   
   .difficulty-group {
@@ -44,7 +49,8 @@
     justify-content: center;
   }
   
-  .difficulty-group input[type="radio"] {
+  .difficulty-group input[type="check"] {
+    
     display: none;
   }
   
@@ -63,9 +69,12 @@
   
   .Countries select {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     border: none;
     width: 100%;
+    border:none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgb(0, 153, 255);
   }
   
   .ButtonX {

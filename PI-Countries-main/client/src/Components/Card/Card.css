@@ -1,33 +1,40 @@
 .Card {
-    background-color: rgba(255, 255, 255, 0.5); 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    border:none;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgb(0, 153, 255);
-    width:15%; 
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-right: 10px;
-    height: 290px ;
+  background-color: rgba(255, 255, 255, 0.5);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align: center;
+  border:none;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgb(0, 153, 255);
+  width:15%;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 10px;
+  height: 290px ;
   }
+  
   .Card:hover{
-    
+    background-color: rgba(104, 104, 104, 0.5);
     color: rgb(0, 153, 255);
     box-shadow: 0px 0px 15px rgb(0, 153, 255);
     transform: translateY(-10px);
    
   }
+  .Link {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
   
   .Flag {
-     border-radius: 10px; 
+    border-radius: 10px; 
     width: 90%;
     max-height: 120px;
     object-fit: cover;
-    transition: all 0.2s ease-in-out;
-    
-    
+    transition: all 0.2s ease-in-out; 
   }
   
   .cardFlag:hover {
@@ -35,10 +42,4 @@
     box-shadow: 0px 0px 15px white;
   }
   
-  .Link {
-    font-size: 1rem;
-    color: black;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
   
