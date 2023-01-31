@@ -19,7 +19,7 @@ const Country = (props)=>{
         <div className="detail">
             <h1 className="title">Your Country</h1>
             <Link to="/home"><button className="buttonHome">BACK HOME</button></Link>
-            <Link to="/activity-form"><button className="ButtonAct">Activity Create</button></Link>
+            <Link to="/activity-form"><button className="ButtonAct">Create Activity </button></Link>
             { country !== null &&
             <div className="BoxConteiner">
                 <div>
@@ -29,6 +29,7 @@ const Country = (props)=>{
                         /> 
                 </div>
                 <div className="CardInfo">
+                <ul>
                     <h3 className="h3">Name: {country.name}</h3>
                     <h3 className="h3">Country ID: {country.id}</h3>
                     <h3 className="h3">Capital: {country.capital}</h3>
@@ -36,7 +37,10 @@ const Country = (props)=>{
                     <h3 className="h3">Subregion: {country.subregion}</h3>
                     <h3 className="h3">Area: {country.area} km</h3>
                     <h3 className="h3">Population: {country.population}</h3>
-                    <h3 className="h3">Activities: {country.Activities && country.Activities.map(e => e.name+': "Difficulty: '+e.difficulty+', duratyion: '+e.duration+', season: '+e.season+'." ')}</h3>
+                    <h3 className="h3">Activities: 
+                    {country.Activities && country.Activities.map(e => 
+                        e.name+': "Difficulty: '+e.difficulty+', duratyion: '+e.duration+', season: '+e.season+'." ')}</h3>
+                </ul>
                 </div>
             </div> 
             }

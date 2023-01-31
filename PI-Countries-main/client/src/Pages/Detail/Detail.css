@@ -75,16 +75,18 @@ height: 100vh;
     }
     
 .imgCountry {
-        width: 40%;
-        height: 60%;
-        position: absolute;
-        top: 175px;
-        left: 50px;
+    width: 40%;
+    max-height: 60%;
+    position: absolute;
+    top: 175px;
+    left: 50px;
+    border-radius: 50px;
     }
     
 .CardInfo {
     width: 50%;
     height: auto;
+    min-height: 60%;
     position: absolute;
     top: 175px;
     right: 50px;
