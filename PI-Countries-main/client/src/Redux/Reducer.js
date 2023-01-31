@@ -20,6 +20,7 @@ return{
 ...state,
 countries: action.payload
 };
+
 case GET_DETAIL:
 return {
 ...state,

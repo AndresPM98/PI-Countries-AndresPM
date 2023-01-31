@@ -18,7 +18,7 @@
   color: rgb(0, 153, 255);
   box-shadow: 0 0 15px rgb(255, 255, 255);
   transform: translateY(-10px);
-  font-weight: bold;
+  font-weight: bold; 
 }
 
 .Link {
@@ -39,10 +39,6 @@
   transition: all 0.2s ease-in-out;
 }
 
-.cardFlag:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px white;
-}
 
 .h3Card {
   margin-top: 15px;
