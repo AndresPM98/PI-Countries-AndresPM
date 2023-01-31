@@ -52,15 +52,6 @@ export default function ActivityCreate() {
       alert('Activity Created');
       history.push("/home");
     };
-
-    /* const handleActivities = (e) => {
-      if (!form.countryId.includes(e.target.value)) {
-       setForm({ ...form, countryId: [...form.countryId, e.target.value] });
-        validate({ ...form, activities: [...form.activity, e.target.value] });
-      } else {
-        alert("El tipo ya fue seleccionado.");
-      }
-    }; */
     
 const validate = (form)=>{
             let errors = {};
@@ -75,7 +66,6 @@ const validate = (form)=>{
             } else if (!form.countryId.length === 0) {
               errors.countryId = 'You must select a country'
             }
-            //return errors
             setErrors(errors);
              handleDisable(errors);
           } 
@@ -112,7 +102,9 @@ const validate = (form)=>{
 
     return(
       <div className="FondoForm">
+
             <h3 className="TitleForm">Plan your activity</h3>
+
         <form onSubmit={handleSubmit} id={"formulario"} className="Form">
 
             <div className="Name">
@@ -173,14 +165,6 @@ const validate = (form)=>{
             
            </div>
             {errors.countryId && <p className="error">{errors.countryId}</p>}
-           {/* <div className="Countries">
-            <select onChange={(e) => handleSelect(e)} key='countryId'>
-              <option className="op"> Countries </option>
-                {countries.map((v) => (
-                  <option className="op" value={v.id}>{v.name}</option>
-                ))}
-            </select>
-          </div> */}
           <div className="Countries">
             <select onChange={(e) => handleSelect(e)} key='countryId'>
               <option className="op"> Countries </option>
@@ -200,6 +184,7 @@ const validate = (form)=>{
               </div>
             ))} 
           </div> 
+
           <div className="ButtonSub">
             <button  disabled={!disEna && "disabled"} type="submit">Create Activity</button>    
             {!disEna ? <p>Revise todos los campos</p> : <p></p>} 
@@ -207,7 +192,9 @@ const validate = (form)=>{
           <div className="ButtonHome">
           </div> 
         </form>
+
           <Link to="/home"><button className="ButtonHomeForm">BACK HOME</button></Link>
+          
         </div>
     )
 }

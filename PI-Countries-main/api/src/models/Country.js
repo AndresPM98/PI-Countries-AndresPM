@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define("Country", {
+  sequelize.define("Country", {   // Definimos el nombre de la tabla.
     id: {
       type: DataTypes.STRING(3), 
       primaryKey: true,           // Clave Primaria.
