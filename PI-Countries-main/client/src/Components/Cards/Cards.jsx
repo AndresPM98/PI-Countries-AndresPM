@@ -53,7 +53,7 @@ const Filters = () => {
   <div className="FilterConteiner">
   <label className="LabOr">Order</label>
   <select onChange={(event) => handleOrderAZ(event)} className="OrderAZ">
-  <option value="all" className="Options">Predeterminado</option>
+  <option value="all" className="Options">Default</option>
   <option value={'asc'} className="Options">A-Z</option>
   <option value={'desc'} className="Options">Z-A</option>
   </select>

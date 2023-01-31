@@ -110,6 +110,7 @@
   
   .ButtonX div {
     margin-right: 10px;
+    font-weight: bold;
   }
   
   .ButtonX input[type="button"] {
@@ -125,7 +126,7 @@
     background-color: rgb(255, 0, 0);
     color: white;
     font-weight: bold;
-    box-shadow: 0px 0px 15px rgb(0, 153, 255);
+    box-shadow: 0px 0px 15px rgb(255, 0, 0);
     transform: translateY(-5px);
   }
   
