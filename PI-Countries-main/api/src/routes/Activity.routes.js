@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { Country, Activity } = require('../db.js');
-const { getActivities, deleteActivity } = require('../controllers/ActivityController');
+const { getActivities } = require('../controllers/ActivityController');
 const router = Router();
 
 router.post('/activity', async(req, res) => {
@@ -24,16 +24,6 @@ router.post('/activity', async(req, res) => {
 router.get('/activities', async(req, res) => {
   const activities = await getActivities();
   return res.status(200).send(activities)
-});
-
-router.delete("/delete/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    const deleted = await deleteActivity(id);
-    res.status(200).json(deleted);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
 });
 
 module.exports = router;

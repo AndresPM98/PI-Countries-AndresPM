@@ -11,7 +11,8 @@ const getCountries = async () => {     // Funcion asincrona que utiliza la funci
   } catch (error) {                                   //la base de datos y se almacenan en la variable "country".
     return res.status(400).json({ message: error.message });
   }
-};
+}; 
+
 
  const findCountry = async (name) => {    // Funcion para buscar paises por nombre.
   console.log("findCountry");               // Recibe la prpiedad por parametro.
