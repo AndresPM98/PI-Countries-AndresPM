@@ -42,40 +42,42 @@
   
   
   .Name, .Difficulty, .Duration, .Seasons, .Countries {
-    margin: 10px;
+    margin: 15px;
     margin-bottom: 20px;
     display:inline;
   }
   
   .Name label, .Difficulty label, .Duration label, .Seasons label, .Countries label {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
    
     font-weight: bold;
   }
   
   .Name input, .Duration input {
-    margin: 5px;
+    display: flex;
+    margin-top: 15px;
     padding: 10px;
     border-radius: 5px;
     border: none;
-    width: 100%;
+    width: 40vh;
     border:none;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgb(0, 153, 255);
   }
   
   .difficulty-group {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+    
   }
   
   .difficulty-group input[type="check"] {
-    
     display: none;
   }
   
   .difficulty-group label {
-    margin-right: 10px;
+    margin-right: 15px;
     font-weight: bold;
     cursor: pointer;
   }
@@ -84,14 +86,17 @@
     padding: 10px;
     border-radius: 50px;
     border: none;
-    width: 100%;
+    width: 43vh;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px rgb(0, 153, 255);
   }
   
   .Countries select {
     padding: 10px;
     border-radius: 50px;
     border: none;
-    width: 100%;
+    width: 43vh;
     border:none;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgb(0, 153, 255);
@@ -111,8 +116,17 @@
     background-color: white;
     color: black;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 8px rgb(255, 0, 0);
     cursor: pointer;
+  }
+  .ButtonX input:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 0px 15px rgb(0, 153, 255);
+    transform: translateY(-5px);
   }
   
   .ButtonSub {
