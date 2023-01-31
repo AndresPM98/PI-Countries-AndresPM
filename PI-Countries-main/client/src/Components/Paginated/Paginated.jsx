@@ -1,20 +1,30 @@
-import React from "react";
-
+import React, { useState } from "react";
 
 export default function Paginado({ countriesPerPage, countries, paginado }) {
-  const pageNumbers = []
-  for (let i = 1; i <= Math.ceil(countries/countriesPerPage) && i <= 25; i++) {
-    pageNumbers.push(i)
+  const [selectedNumber, setSelectedNumber] = useState(null);
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(countries / countriesPerPage) && i <= 25; i++) {
+    pageNumbers.push(i);
   }
   return (
-    <nav className='Paginado'>
+    <nav className="Paginado">
       <ul className="Paginado__List">
-        {pageNumbers && pageNumbers.map(number => (
+        {pageNumbers.map((number) => (
           <li key={number}>
-            <button className='Paginado__Number' onClick={() => paginado(number)}> {number} </button>
+            <button
+              className={`Paginado__Number ${
+                selectedNumber === number ? "Paginado__Number--selected" : ""
+              }`}
+              onClick={() => {
+                setSelectedNumber(number);
+                paginado(number);
+              }}
+            >
+              {number}
+            </button>
           </li>
         ))}
       </ul>
     </nav>
-  )
+  );
 }

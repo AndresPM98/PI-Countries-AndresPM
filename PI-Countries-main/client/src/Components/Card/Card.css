@@ -1,45 +1,59 @@
 .Card {
   background-color: rgba(255, 255, 255, 0.5);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  border:none;
+  border: 1px solid rgb(0, 153, 255);
   border-radius: 20px;
-  box-shadow: 0px 0px 20px rgb(0, 153, 255);
-  width:15%;
-  margin-top: 20px;
-  margin-left: 15px;
-  margin-right: 10px;
-  height: 290px ;
-  }
-  
-  .Card:hover{
-    background-color: rgba(104, 104, 104, 0.5);
-    color: rgb(0, 153, 255);
-    box-shadow: 0px 0px 15px rgb(0, 153, 255);
-    transform: translateY(-10px);
-   
-  }
-  .Link {
-    margin-top: 15px;
-    font-size: 1rem;
-    color: black;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
-  .Flag {
-    border-radius: 10px;
-    width: 90%;
-    max-height: 120px;
-    object-fit: cover;
-    transition: all 0.2s ease-in-out; 
-  }
-  
-  .cardFlag:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 0px 15px white;
-  }
-  
-  
+  box-shadow: 0 0 20px rgb(0, 153, 255);
+  width: 20%;
+  height: 320px;
+  margin: 20px 15px 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.Card:hover {
+  background-color: rgba(104, 104, 104, 0.5);
+  color: rgb(0, 153, 255);
+  box-shadow: 0 0 15px rgb(0, 153, 255);
+  transform: translateY(-10px);
+  color: white;
+  font-weight: bold;
+}
+
+.Link {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.Flag {
+  border-radius: 10px;
+  width: 90%;
+  height: 140px;
+  background-size: contain;
+  object-fit: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.cardFlag:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px white;
+}
+
+.h3Card {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+.pCont {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: rgb(109, 109, 109);
+}
