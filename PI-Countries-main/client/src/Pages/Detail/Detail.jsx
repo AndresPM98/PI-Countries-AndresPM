@@ -33,7 +33,7 @@ const Country = (props)=>{
                     <h3 className="h3">Name: {country.name}</h3>
                     <h3 className="h3">Country ID: {country.id}</h3>
                     <h3 className="h3">Capital: {country.capital}</h3>
-                    <h3 className="h3">Continent {country.continente}</h3>
+                    <h3 className="h3">Continent: {country.continent}</h3>
                     <h3 className="h3">Subregion: {country.subregion}</h3>
                     <h3 className="h3">Area: {country.area} km</h3>
                     <h3 className="h3">Population: {country.population}</h3>

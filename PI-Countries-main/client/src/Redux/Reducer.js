@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, GET_DETAIL, FILTER_BY_CONTINENT, GET_ACTIVITIES, FILTER_BY_ACTIVITY, ORDER_BY_POPULATION, ORDER_BY_NAME, POST_ACTIVITIES  } from "./Actions";
+import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, GET_DETAIL, FILTER_BY_CONTINENT, GET_ACTIVITIES, FILTER_BY_ACTIVITY, ORDER_BY_POPULATION, ORDER_BY_NAME, POST_ACTIVITIES } from "./Actions";
 
 const initialState = {
 allCountries:[],
@@ -94,7 +94,7 @@ case FILTER_BY_ACTIVITY:
         let ordPop = [...state.allCountries];
         let orderCountriesByPopulation =
         action.payload=== "all"? ordPop:
-         action.payload === "HIGHER_POPULATION"
+         action.payload === "Higher"
           ? ordPop.sort((a, b) => {
           if (a.population < b.population) {
             return 1;

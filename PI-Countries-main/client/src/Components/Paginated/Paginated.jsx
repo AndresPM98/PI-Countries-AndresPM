@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function Paginado({ countriesPerPage, countries, paginado }) {
-  const [selectedNumber, setSelectedNumber] = useState(null);
+  const [selectedNumber, setSelectedNumber] = useState(null);  // Para mostrar en que pagina se esta parado.
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(countries / countriesPerPage) && i <= 25; i++) {
     pageNumbers.push(i);

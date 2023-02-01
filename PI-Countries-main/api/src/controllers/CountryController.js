@@ -3,15 +3,34 @@ const { Op } = require ("sequelize")
 const { getInfo } = require ("../Database")
 const { includeActivity } = require ("./IncludeController")
 
-const getCountries = async () => {     // Funcion asincrona que utiliza la funcion creada en la carpeta ...     
-  try {                                // "Database" para traer la informacion filtrada de todos los paises.
-    await getInfo();
-    const country = await Country.findAll(includeActivity); //utiliza el método "findAll" en el modelo Country 
-    return country;                                         //para obtener todos los registros de países en 
-  } catch (error) {                                   //la base de datos y se almacenan en la variable "country".
-    return res.status(400).json({ message: error.message });
-  }
-}; 
+
+const getCountries = () => {
+  return new Promise((resolve, reject) => {
+    getInfo()          // Funcion creada en"Database" para traer la informacion filtrada de todos los paises.
+      .then(() => {    // Espera a que se ejecute la funcion anterior.
+        Country.findAll(includeActivity) //utiliza el método "findAll" en el Tabla Country 
+        .then((country) => {            //para obtener todos los registros de países en 
+          resolve(country);             //la base de datos y se almacenan en la variable "country".
+          })
+          .catch((error) => {
+            reject(error);
+          });
+        })
+        .catch((error) => {
+          reject(error);
+        });
+      });
+    };
+    
+    /* const getCountries = async () => {     // Funcion asincrona que utiliza la funcion creada en la carpeta ...     
+      try {                                // "Database" para traer la informacion filtrada de todos los paises.
+        await getInfo();
+        const country = await Country.findAll(includeActivity); 
+        return country;                                         
+      } catch (error) {                                   
+        return res.status(400).json({ message: error.message });
+      }
+    };  */
 
 
  const findCountry = async (name) => {    // Funcion para buscar paises por nombre.
