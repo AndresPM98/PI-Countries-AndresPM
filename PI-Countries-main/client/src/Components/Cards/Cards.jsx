@@ -11,14 +11,14 @@ const Filters = () => {
   const countries = useSelector((state) => state.countries);
   let activityNames = [];
   
-  const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = currentPage === 1 ? 9 : 10;
-  const lastCard = currentPage * cardsPerPage;
-  const firstCard = lastCard - cardsPerPage;
-  const currentCards = countries.slice(firstCard, lastCard);
+  const [currentPage, setCurrentPage] = useState(1); // crea un nueevo estado con valor 1
+  const cardsPerPage = currentPage === 1 ? 9 : 10; // cartas por pagina = si la pagina es 1 son 9 elementos sino 10 
+  const lastCard = currentPage * cardsPerPage; // 9, 20, 30, 40, 50, 60... (se maneja con el lugar en el array)
+  const firstCard = lastCard - cardsPerPage; // la primera 0, 2º seria 20-10=10 (esto es para resetear el numero de cartas en cada pagina) 
+  const currentCards = countries.slice(firstCard, lastCard); // con slice corta 
   const [, setOrden] = useState('');
   
-  const paginado = (pageNumber) => {
+  const paginado = (pageNumber) => {  // setea el estado de currentPage de acuerdo al numero que se clickea.
   setCurrentPage(pageNumber);
   };
   

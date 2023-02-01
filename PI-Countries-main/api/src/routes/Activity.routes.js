@@ -26,4 +26,5 @@ router.get('/activities', async(req, res) => {
   return res.status(200).send(activities)
 });
 
+
 module.exports = router;

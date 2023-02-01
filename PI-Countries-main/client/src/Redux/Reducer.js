@@ -15,6 +15,7 @@ return {
 countries: action.payload,
 allCountries: action.payload,
 };
+
 case GET_COUNTRIES_BY_NAME:
 return{
 ...state,

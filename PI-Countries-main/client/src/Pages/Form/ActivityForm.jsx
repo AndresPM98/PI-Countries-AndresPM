@@ -8,7 +8,7 @@ import "./Form.css"
 
 export default function ActivityCreate() {
 
-  const history = useHistory();
+  const history = useHistory();  // Te manda a una pagina indicada en el hadller submit 
 
   const [form,setForm] = useState({
       name: "",
@@ -24,7 +24,7 @@ export default function ActivityCreate() {
 
   const [errors, setErrors] = useState({});
 
-  let [disEna, setDisEna] = useState(false);
+  let [disEna, setDisEna] = useState(false); //disEna es para desabilitar el boton cuando esta todo completo
           
     useEffect(() => {
         dispatch(getActivities());
@@ -86,12 +86,14 @@ const validate = (form)=>{
             }
           };
 
-    const handleDelete =(i) => {
-        setForm({
-          ...form,
-          countryId: form.countryId.filter((element => element !== i))
-        })
-      };
+          const handleDelete = (i) => {
+            const updatedCountryId = form.countryId.filter((element => element !== i));
+            setForm({
+              ...form,
+              countryId: updatedCountryId
+            });
+            setDisEna(updatedCountryId.length !== 0);
+          };
 
     const handleSelect = (e) => {
         setForm({ 
@@ -111,7 +113,7 @@ const validate = (form)=>{
                 <label>Name</label>
                 <input 
                 placeholder="Name..." 
-                name={"name" }
+                name={"name"}
                 key='name'
                 value={form.name} 
                 onChange={(e) => handleOnChange(e)}/>
