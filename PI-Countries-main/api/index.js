@@ -20,12 +20,14 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const {getCountries} = require('./src/controllers/CountryController')
+require('dotenv').config()
+const {PORT} = process.env
 
 conn.sync({ alter: true }).then(() => {
   getCountries()
     .then(() => {
-      server.listen(3001, () => {
-        console.log('Server listening at 3001');
+      server.listen(PORT, () => {
+        console.log('listening at %s', PORT);
       });
     })
     .catch((err) => {
