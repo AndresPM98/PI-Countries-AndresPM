@@ -19,7 +19,7 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const {getCountries} = require('./src/controllers/CountryController')
+const {getCountries} = require('../api/src/controllers/CountryController')
 require('dotenv').config()
 const {PORT} = process.env
 
