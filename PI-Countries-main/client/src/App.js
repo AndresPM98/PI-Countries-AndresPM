@@ -1,7 +1,8 @@
 import './App.css';
 import { Route } from "react-router-dom";
 import { InitialPage, Home, Form, Detail } from "./Pages"
-
+import axios from 'axios';
+axios.defaults.baseURL='http://localhost:3001/'
 
 
 function App() {
