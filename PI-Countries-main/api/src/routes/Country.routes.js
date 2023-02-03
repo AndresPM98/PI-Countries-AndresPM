@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { getCountries, getCountryById, findCountry } = require("../Controllers/CountryController");
+const { getCountries, getCountryById, findCountry } = require("../../src/controllers/CountryController");
 const router = Router();
 
  router.get("/", async (req, res) => { // Maneja una solicitud de tipo GET. La ruta está asociada con la raíz ("/").
